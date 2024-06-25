@@ -7,4 +7,5 @@ def open_file():
         data = json.load(file)
     print(data)
 
+
 print(open_file)

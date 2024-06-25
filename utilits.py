@@ -12,8 +12,8 @@ def get_executed_operations(data):
     """Возвращает выполненные операции"""
     executed_data = data
     for key, value in data.items():
-        if key != "state" and value != "EXECUTED":
-            return data
+        if key == "state" and value == "EXECUTED":
+            return data.items()
     return executed_data
 
     # пройти в цикл по списку
