@@ -5,16 +5,18 @@ def open_file():
     """Возвращает файл json в виде списка"""
     with open('operations_new.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-    print(data)
+    return data
 
 
 def get_executed_operations(data):
     """Возвращает выполненные операции"""
     executed_data = data
-    for key, value in data.items():
-        if key == "state" and value == "EXECUTED":
-            return data.items()
+    for d in data:
+        for k, v in d.items():
+            if k == "state" and v == "EXECUTED":
+                return data
     return executed_data
+
 
     # пройти в цикл по списку
     # обротиться к ключу state
@@ -25,8 +27,8 @@ def sort_operations(data):
     """Возращает пять последних выполненных операций"""
     # todo отсортировать по дате методом sort или sorted
     last_dates = data
-    for a in data.items():
-        if a == data.items():
+    for a in data:
+        if a == data:
             return data
     return last_dates[:5]
 
