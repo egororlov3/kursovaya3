@@ -35,7 +35,6 @@ def mask_card_number(card_number):
     if len(card_number) < 16:
         return card_number
 
-    # Замаскируем номер карты, показывая только первые 6 и последние 4 цифры
     masked_number = f"{card_number[:6]}******{card_number[-4:]}"
     return masked_number
 
@@ -67,7 +66,6 @@ def print_operations(data):
 
         masked_to = mask_account_number(to_account) if "Счет" in to_account else mask_card_number(to_account)
 
-        # Формируем строку для вывода
         output_line = (
             f"{date} {description}\n"
             f"{masked_from} -> {masked_to}\n"
