@@ -2,7 +2,6 @@ import json
 from unittest.mock import patch
 
 import pytest
-from datetime import datetime
 from utilits import (
     open_file,
     get_executed_operations,
